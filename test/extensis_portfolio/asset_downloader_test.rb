@@ -6,7 +6,7 @@ module ExtensisPortfolio
     @@connection = ExtensisPortfolio::Connection.new(ENV['SERVER'], ENV['USERNAME'], ENV['PASSWORD'], {logger: Logger.new('test_logfile.log'), log_level: :debug})
 
     let(:asset_id) { "2106" }
-    let(:catalog_id) { "87C27791-4420-469D-0FD8-611E790AEDFA" }
+    let(:catalog_id) { ENV['CATALOG_ID'] }
 
     subject { ExtensisPortfolio::AssetDownloader.new(@@connection, catalog_id) }
 
